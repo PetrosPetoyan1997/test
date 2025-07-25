@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "petoyanpetros97@gmail.com",
-    pass: "aeyx egox fxjr qxsd" // Use app password, not regular password
+    pass: "aeyxegoxfxjrqxsd" // Use app password, not regular password
   }
 });
 
@@ -35,6 +35,7 @@ app.post("/location", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log("Server running on http://localhost:3000");
 });
