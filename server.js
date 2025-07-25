@@ -27,7 +27,10 @@ app.post("/location", async (req, res) => {
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions, (error, info) => {
+      if (error) return console.log("❌ Error:", error);
+      console.log("✅ Email sent:", info.response);
+    });
     res.send({ status: "ok" });
   } catch (error) {
     console.error(error);
